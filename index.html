@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Plantifi - Interactive Plant care & Store</title>
+        <!Bootstrap 5 CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    <body>
+        <!--Navigation Bar (Required on all pages)-->
+        <nav class=""navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html"> 🌿 Plantifi </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="=nav-item"><a class="nav-link active" href="index.html">Home</a> </li>
+                        <li class="nav-item"> <a class="nav-link" href="directory.html"> plant Directory</a></li>
+                        <li class="=nav-item"><a class="nav-link " href="contact.html"> contact Us</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id ="plantCarousel"class="plantCarousel slide" data-bs-ride =" carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="P-5 text-center bg-light text-success rounded-3 m-3">
+                        <h1 class="fw-bold"> Welcome to plantifi</h1>
+                        <p class="lead"> Discover,track,and care for your favorite indoor plants.</p>
+                        <a herf="directory.html"class="btn btn-success btn-lg">Explore Directory</a>
+                    </div>
+                </div>
+                <div class="carrousel-item">
+                    <div class="p-5 text-center bg-success text-white rounded-3 m3">
+                        <h1 class="fw-bold"> Healthy Greenery at your Fingertips</h1>
+                        <p class="lead"> Get rxpert plant care advice andtios.</p>
+                        <a herf="contact.html" class="btn btn-ligth btn-lg text-success fw-blod">Get In Touch</a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#plantCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#plantCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
+            </button>
+        </div>
+    </body>
+</html>
