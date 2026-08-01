@@ -91,3 +91,18 @@ footer {
     margin-top: auto;
     background-color: #1a252f !important;
 }
+/* Full Body Nature Background */
+.hero-bg-section {
+    background: linear-gradient(rgba(245, 247, 245, 0.82), rgba(245, 247, 245, 0.82)), 
+                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600') no-repeat center center / cover;
+    min-height: 85vh;
+}
+
+/* Translucent Frosted Glass Box */
+.glass-card-box {
+    background: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
+}
