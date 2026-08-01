@@ -6,15 +6,13 @@
     <title>Contact Us - PlantIfi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body class="d-flex flex-column min-vh-100">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-                <img src="images/logo.png" alt="PlantIfi" width="35" height="35" class="bg-white rounded-circle p-1" onerror="this.style.display='none'">
-                <span class="fw-bold">🌿 PlantIfi</span>
+                <span class="fw-bold fs-4">🌿 PlantIfi</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
@@ -37,7 +35,6 @@
             <div class="col-lg-10">
                 <div class="contact-glass-card rounded-4 p-4 p-md-5">
                     
-
                     <div class="text-center mb-5">
                         <span class="badge bg-success-subtle text-success border border-success mb-2 px-3 py-2 rounded-pill">💬 Support & Inquiries</span>
                         <h2 class="fw-bold text-success display-6">Get in Touch with PlantIfi 🌿</h2>
@@ -48,7 +45,6 @@
 
                     <div class="row g-4 align-items-stretch">
                         
-
                         <div class="col-md-5 d-flex flex-column justify-content-between">
                             <div class="info-box-card rounded-4 p-4 mb-3 d-flex align-items-start gap-3">
                                 <div class="bg-success text-white rounded-circle p-3 d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
@@ -82,20 +78,33 @@
                         </div>
 
                         <div class="col-md-7">
-                            <form id="contactForm" class="p-2">
+                            <!-- Dynamic Feedback Alert Box -->
+                            <div id="formAlert" class="alert d-none mb-3" role="alert"></div>
+
+                            <form id="reportForm" class="p-2">
                                 <div class="mb-3">
-                                    <label for="fullName" class="form-label fw-semibold text-dark">Full Name</label>
-                                    <input type="text" class="form-control rounded-3 custom-input" id="fullName" placeholder="e.g. John Doe" required>
+                                    <label for="userName" class="form-label fw-semibold text-dark">Full Name</label>
+                                    <input type="text" class="form-control rounded-3 custom-input" id="userName" placeholder="e.g. John Doe">
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="emailAddress" class="form-label fw-semibold text-dark">Email Address</label>
-                                    <input type="email" class="form-control rounded-3 custom-input" id="emailAddress" placeholder="name@example.com" required>
+                                    <label for="userEmail" class="form-label fw-semibold text-dark">Email Address</label>
+                                    <input type="email" class="form-control rounded-3 custom-input" id="userEmail" placeholder="name@example.com">
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="inquiryType" class="form-label fw-semibold text-dark">Inquiry Type</label>
+                                    <select class="form-select rounded-3 custom-input" id="inquiryType">
+                                        <option value="" selected disabled>Select an inquiry type...</option>
+                                        <option value="general">General Support</option>
+                                        <option value="toxicity">Toxicity / Safety Report</option>
+                                        <option value="identification">Plant Identification</option>
+                                    </select>
                                 </div>
 
                                 <div class="mb-4">
-                                    <label for="message" class="form-label fw-semibold text-dark">Your Message</label>
-                                    <textarea class="form-control rounded-3 custom-input" id="message" rows="4" placeholder="How can we help you regarding plant safety or identification?" required></textarea>
+                                    <label for="plantDetails" class="form-label fw-semibold text-dark">Your Message</label>
+                                    <textarea class="form-control rounded-3 custom-input" id="plantDetails" rows="4" placeholder="How can we help you regarding plant safety or identification?"></textarea>
                                 </div>
 
                                 <button type="submit" class="btn btn-success btn-lg w-100 fw-semibold shadow-sm rounded-3 py-2">
@@ -110,6 +119,7 @@
             </div>
         </div>
     </main>
+
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
             <small>&copy; 2026 PlantIfi - ICT 1209 Mini Project | Rajarata University</small>
