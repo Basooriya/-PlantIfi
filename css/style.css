@@ -1,12 +1,16 @@
+/* ==========================================================================
+   Plantifi - Custom Stylesheet
+   ========================================================================== */
 
+/* Global Page Styling & Soft Nature Background */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
-                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600') fixed no-repeat center center/cover;
+                url('https://images.pexels.com/photos/1072179/pexels-photo-1072179.jpeg?auto=compress&cs=tinysrgb&w=1600') fixed no-repeat center center/cover;
     min-height: 100vh;
 }
 
-
+/* Translucent Glass Box Styling */
 .glass-card {
     background: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: blur(8px);
@@ -15,7 +19,20 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
+/* Featured Category Filter Buttons */
+.category-pill {
+    transition: all 0.25s ease-in-out;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
 
+.category-pill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Directory Cover Cards with Dark Gradient Overlay */
 .plant-card-cover {
     background-size: cover !important;
     background-position: center !important;
@@ -27,7 +44,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-
+/* Dark overlay to make text crystal clear over plant photos */
 .plant-card-cover::before {
     content: '';
     position: absolute;
@@ -46,19 +63,31 @@ body {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3) !important;
 }
 
-
+/* Card Background Images (Pexels High Reliability Direct URLs) */
 .bg-monstera {
-    background: url('https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=800');
+    background: url('https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg?auto=compress&cs=tinysrgb&w=800');
 }
 .bg-snakeplant {
-    background: url('https://images.unsplash.com/photo-1593482892290-f54927ae1bac?q=80&w=800');
+    background: url('https://images.pexels.com/photos/2123482/pexels-photo-2123482.jpeg?auto=compress&cs=tinysrgb&w=800');
 }
 .bg-peacelily {
-    background: url('https://images.unsplash.com/photo-1593691509543-c55fb32e7355?q=80&w=800');
+    background: url('https://images.pexels.com/photos/4505171/pexels-photo-4505171.jpeg?auto=compress&cs=tinysrgb&w=800');
 }
 .bg-aloevera {
-    background: url('https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=800');
+    background: url('https://images.pexels.com/photos/1687341/pexels-photo-1687341.jpeg?auto=compress&cs=tinysrgb&w=800');
 }
 .bg-fiddleleaf {
-    background: url('https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=800');
+    background: url('https://images.pexels.com/photos/7084310/pexels-photo-7084310.jpeg?auto=compress&cs=tinysrgb&w=800');
+}
+.bg-lavender {
+    background: url('https://images.pexels.com/photos/207518/pexels-photo-207518.jpeg?auto=compress&cs=tinysrgb&w=800');
+}
+.bg-basil {
+    background: url('https://images.pexels.com/photos/1087902/pexels-photo-1087902.jpeg?auto=compress&cs=tinysrgb&w=800');
+}
+.bg-oleander {
+    background: url('https://images.pexels.com/photos/6208087/pexels-photo-6208087.jpeg?auto=compress&cs=tinysrgb&w=800');
+}
+.bg-orchid {
+    background: url('https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=800');
 }

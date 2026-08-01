@@ -10,7 +10,7 @@
 </head>
 <body class="d-flex flex-column min-vh-100">
 
-    
+    <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
@@ -32,11 +32,11 @@
         </div>
     </nav>
 
-    
+    <!-- Search Header Section -->
     <header class="py-5 text-center">
         <div class="container">
             <h1 class="fw-bold text-success display-5 mb-2">Plant Directory 🪴</h1>
-            <p class="lead text-dark fw-medium opacity-90 mb-4">Search and explore popular house plants and succulents</p>
+            <p class="lead text-dark fw-medium opacity-90 mb-4">Search and explore popular house plants, herbs, and safety profiles</p>
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
                     <input type="text" id="searchInput" class="form-control form-control-lg rounded-pill shadow-sm px-4" placeholder="🔍 Type plant name to filter...">
@@ -45,11 +45,38 @@
         </div>
     </header>
 
-    
+    <!-- Featured Categories Filter Pills Section -->
+    <section class="container mb-4">
+        <div class="glass-card rounded-4 p-4 shadow-sm text-center">
+            <h5 class="fw-bold text-success mb-3">Explore by Category 🌿</h5>
+            <div class="d-flex flex-wrap justify-content-center gap-2">
+                <button class="btn btn-outline-success rounded-pill px-3 py-2 fw-semibold category-pill shadow-sm active">
+                    ✨ All Plants
+                </button>
+                <button class="btn btn-outline-danger rounded-pill px-3 py-2 fw-semibold category-pill shadow-sm">
+                    ☠️ Poisonous / Toxic
+                </button>
+                <button class="btn btn-outline-success rounded-pill px-3 py-2 fw-semibold category-pill shadow-sm">
+                    🥗 Edible / Culinary
+                </button>
+                <button class="btn btn-outline-primary rounded-pill px-3 py-2 fw-semibold category-pill shadow-sm">
+                    🌱 Herbal & Medicinal
+                </button>
+                <button class="btn btn-outline-secondary rounded-pill px-3 py-2 fw-semibold category-pill shadow-sm">
+                    🌸 Ornamental
+                </button>
+                <button class="btn btn-outline-warning text-dark rounded-pill px-3 py-2 fw-semibold category-pill shadow-sm">
+                    🌵 Succulents
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plant Cards Grid -->
     <main class="container py-3 flex-grow-1">
         <div class="row g-4" id="plantGrid">
 
-            
+            <!-- Card 1: Monstera Deliciosa -->
             <div class="col-md-6 col-lg-4 plant-item">
                 <div class="card plant-card-cover bg-monstera rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
                     <div>
@@ -63,7 +90,7 @@
                 </div>
             </div>
 
-            
+            <!-- Card 2: Snake Plant -->
             <div class="col-md-6 col-lg-4 plant-item">
                 <div class="card plant-card-cover bg-snakeplant rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
                     <div>
@@ -77,7 +104,7 @@
                 </div>
             </div>
 
-            
+            <!-- Card 3: Peace Lily -->
             <div class="col-md-6 col-lg-4 plant-item">
                 <div class="card plant-card-cover bg-peacelily rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
                     <div>
@@ -91,7 +118,7 @@
                 </div>
             </div>
 
-            
+            <!-- Card 4: Aloe Vera -->
             <div class="col-md-6 col-lg-4 plant-item">
                 <div class="card plant-card-cover bg-aloevera rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
                     <div>
@@ -105,7 +132,7 @@
                 </div>
             </div>
 
-            
+            <!-- Card 5: Fiddle Leaf Fig -->
             <div class="col-md-6 col-lg-4 plant-item">
                 <div class="card plant-card-cover bg-fiddleleaf rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
                     <div>
@@ -119,10 +146,66 @@
                 </div>
             </div>
 
+            <!-- Card 6: Lavender -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-lavender rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-primary mb-2">Herbal</span>
+                        <h4 class="fw-bold text-white">Lavender</h4>
+                        <p class="text-light opacity-90 small">Aromatic herb known for its calming scent, essential oils, and stress-relieving properties.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">View Profile</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7: Sweet Basil -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-basil rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-success mb-2">Edible</span>
+                        <h4 class="fw-bold text-white">Sweet Basil</h4>
+                        <p class="text-light opacity-90 small">A flavorful culinary herb widely used in cooking, pesto, and traditional remedies.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">View Profile</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8: Oleander -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-oleander rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-danger mb-2">Poisonous</span>
+                        <h4 class="fw-bold text-white">Oleander</h4>
+                        <p class="text-light opacity-90 small">Highly toxic. Ingesting any part of this ornamental shrub can be fatal to humans and pets.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-danger btn-sm fw-semibold shadow-sm px-3">Safety Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 9: Moth Orchid -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-orchid rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-secondary mb-2">Ornamental</span>
+                        <h4 class="fw-bold text-white">Moth Orchid</h4>
+                        <p class="text-light opacity-90 small">A beautiful, long-blooming flower highly prized for indoor decoration and aesthetics.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">Care Tips</button>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </main>
 
-   
+    <!-- Footer -->
     <footer class="bg-dark text-white text-center py-3 mt-auto">
         <div class="container">
             <small>&copy; 2026 PlantIfi - Department of ICT, Rajarata University of Sri Lanka</small>
