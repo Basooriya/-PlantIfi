@@ -3,23 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plant Directory - Plantifi</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Plant Directory - PlantIfi</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
 </head>
-<body>
+<body class="d-flex flex-column min-vh-100">
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">🌿 Plantifi</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="images/logo.png" alt="PlantIfi" width="35" height="35" class="bg-white rounded-circle p-1" onerror="this.style.display='none'">
+                <span class="fw-bold">🌿 PlantIfi</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="directory.html">Plant Directory</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
@@ -28,88 +32,104 @@
         </div>
     </nav>
 
-    <!-- Header & Search Input -->
-    <div class="bg-success text-white py-4 text-center">
+    <!-- Search Header Section -->
+    <header class="py-5 text-center">
         <div class="container">
-            <h1 class="fw-bold">Plant Directory 🪴</h1>
-            <p class="lead">Search and explore popular house plants and succulents</p>
-            <div class="row justify-content-center mt-3">
-                <div class="col-md-6">
-                    <input type="text" id="plantSearch" class="form-control form-control-lg shadow-sm" placeholder="🔍 Type plant name to filter...">
+            <h1 class="fw-bold text-success display-5 mb-2">Plant Directory 🪴</h1>
+            <p class="lead text-dark fw-medium opacity-90 mb-4">Search and explore popular house plants and succulents</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <input type="text" id="searchInput" class="form-control form-control-lg rounded-pill shadow-sm px-4" placeholder="🔍 Type plant name to filter...">
                 </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <!-- Plant Catalog List -->
-    <div class="container my-5">
-        <div class="row g-4" id="plantList">
-            
-            <div class="col-md-4 plant-card" data-name="monstera deliciosa indoor foliage green">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
+    <!-- Plant Cards Grid -->
+    <main class="container py-3 flex-grow-1">
+        <div class="row g-4" id="plantGrid">
+
+            <!-- Card 1: Monstera Deliciosa -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-monstera rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
                         <span class="badge bg-success mb-2">Indoor</span>
-                        <h5 class="card-title text-success fw-bold">Monstera Deliciosa 🌿</h5>
-                        <p class="card-text text-muted">Famous for its split leaves. Thrives in bright, indirect sunlight.</p>
-                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" title="Water once per week">Care Tips</button>
+                        <h4 class="fw-bold text-white">Monstera Deliciosa</h4>
+                        <p class="text-light opacity-90 small">Famous for its split leaves. Thrives in bright, indirect sunlight.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">Care Tips</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 plant-card" data-name="snake plant succulent indoor air purifier">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
+            <!-- Card 2: Snake Plant -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-snakeplant rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
                         <span class="badge bg-warning text-dark mb-2">Succulent</span>
-                        <h5 class="card-title text-success fw-bold">Snake Plant 🪴</h5>
-                        <p class="card-text text-muted">Hardy indoor plant that naturally purifies house air toxins.</p>
-                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" title="Water every 2-3 weeks">Care Tips</button>
+                        <h4 class="fw-bold text-white">Snake Plant</h4>
+                        <p class="text-light opacity-90 small">Hardy indoor plant that naturally purifies house air toxins.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">Care Tips</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 plant-card" data-name="peace lily indoor bloom flower">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
+            <!-- Card 3: Peace Lily -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-peacelily rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
                         <span class="badge bg-success mb-2">Indoor</span>
-                        <h5 class="card-title text-success fw-bold">Peace Lily 🌸</h5>
-                        <p class="card-text text-muted">Features elegant white flowers and prefers shaded indoor spots.</p>
-                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" title="Keep soil moist continuously">Care Tips</button>
+                        <h4 class="fw-bold text-white">Peace Lily</h4>
+                        <p class="text-light opacity-90 small">Features elegant white flowers and prefers shaded indoor spots.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">Care Tips</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 plant-card" data-name="aloe vera succulent medicinal outdoor">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
+            <!-- Card 4: Aloe Vera -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-aloevera rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
                         <span class="badge bg-warning text-dark mb-2">Succulent</span>
-                        <h5 class="card-title text-success fw-bold">Aloe Vera 🌱</h5>
-                        <p class="card-text text-muted">Popular medicinal succulent with soothing gel in fleshy leaves.</p>
-                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" title="Needs full direct sunlight">Care Tips</button>
+                        <h4 class="fw-bold text-white">Aloe Vera</h4>
+                        <p class="text-light opacity-90 small">Popular medicinal succulent with soothing gel in fleshy leaves.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">Care Tips</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-4 plant-card" data-name="fiddle leaf fig tree indoor decoration">
-                <div class="card h-100 shadow-sm border-0">
-                    <div class="card-body">
-                        <span class="badge bg-success mb-2">Indoor Tree</span>
-                        <h5 class="card-title text-success fw-bold">Fiddle Leaf Fig 🌳</h5>
-                        <p class="card-text text-muted">Stunning indoor tree with large, broad green leaves.</p>
-                        <button class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" title="Bright indirect light only">Care Tips</button>
+            <!-- Card 5: Fiddle Leaf Fig -->
+            <div class="col-md-6 col-lg-4 plant-item">
+                <div class="card plant-card-cover bg-fiddleleaf rounded-4 p-4 shadow-sm h-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <span class="badge bg-info text-dark mb-2">Indoor Tree</span>
+                        <h4 class="fw-bold text-white">Fiddle Leaf Fig</h4>
+                        <p class="text-light opacity-90 small">Stunning indoor tree with large, broad green leaves.</p>
+                    </div>
+                    <div>
+                        <button class="btn btn-light btn-sm fw-semibold shadow-sm px-3">Care Tips</button>
                     </div>
                 </div>
             </div>
 
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4 mt-auto">
-        <p class="mb-0">&copy; 2026 Plantifi - ICT 1209 Mini Project | Rajarata University</p>
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <small>&copy; 2026 PlantIfi - Department of ICT, Rajarata University of Sri Lanka</small>
+        </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

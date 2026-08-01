@@ -1,112 +1,64 @@
-:root {
-    --primary-green: #2e7d32;
-    --dark-green: #1b5e20;
-    --light-green: #e8f5e9;
-    --accent-gold: #fbc02d;
-    --text-dark: #2c3e50;
-    --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    --hover-shadow: 0 15px 30px rgba(46, 125, 50, 0.15);
-}
-
+/* Global Page Styling & Soft Nature Background */
 body {
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    color: var(--text-dark);
-    background-color: #f8f9fa;
-    display: flex;
-    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
+                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600') fixed no-repeat center center/cover;
     min-height: 100vh;
 }
 
-.navbar {
-    background-color: var(--primary-green) !important;
-    transition: background-color 0.3s ease;
-}
-
-.navbar-brand span {
-    letter-spacing: 0.5px;
-}
-
-.nav-link {
-    transition: color 0.2s ease, transform 0.2s ease;
-}
-
-.nav-link:hover {
-    color: #ffffff !important;
-    transform: translateY(-1px);
-}
-
-.plant-card .card {
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    border-radius: 12px;
-    overflow: hidden;
-    background: #ffffff;
-}
-
-.plant-card .card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--hover-shadow) !important;
-}
-
-.card-img-placeholder {
-    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.badge {
-    padding: 6px 12px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    border-radius: 20px;
-}
-
-#featuredSlider {
-    border-radius: 16px !important;
-    background: linear-gradient(to right, #ffffff, #f1f8e9);
-}
-
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-    filter: invert(1);
-}
-
-.form-control:focus, .form-select:focus {
-    border-color: var(--primary-green);
-    box-shadow: 0 0 0 0.25rem rgba(46, 125, 50, 0.25);
-}
-
-.form-check-input:checked {
-    background-color: var(--primary-green);
-    border-color: var(--primary-green);
-}
-
-footer {
-    margin-top: auto;
-    background-color: #1a252f !important;
-}
-
-.hero-bg-section {
-    background: linear-gradient(rgba(245, 247, 245, 0.82), rgba(245, 247, 245, 0.82)), 
-                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600') no-repeat center center / cover;
-    min-height: 85vh;
-}
-
-.glass-card-box {
-    background: rgba(255, 255, 255, 0.85) !important;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important;
-}
-.page-bg-wrapper {
-    background: linear-gradient(rgba(245, 247, 245, 0.85), rgba(245, 247, 245, 0.85)), 
-                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?q=80&w=1600') no-repeat center center fixed / cover;
-    min-height: 100vh;
-}
-
-.glass-container {
-    background: rgba(255, 255, 255, 0.88) !important;
+/* Translucent Glass Box Styling */
+.glass-card {
+    background: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.6) !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Directory Cover Cards with Dark Gradient Overlay */
+.plant-card-cover {
+    background-size: cover !important;
+    background-position: center !important;
+    color: #ffffff !important;
+    border: none !important;
+    position: relative;
+    overflow: hidden;
+    min-height: 240px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark overlay to make text crystal clear over plant photos */
+.plant-card-cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 1;
+}
+
+.plant-card-cover * {
+    position: relative;
+    z-index: 2;
+}
+
+.plant-card-cover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Specific Cover Image URLs */
+.bg-monstera {
+    background: url('https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=800');
+}
+.bg-snakeplant {
+    background: url('https://images.unsplash.com/photo-1593482892290-f54927ae1bac?q=80&w=800');
+}
+.bg-peacelily {
+    background: url('https://images.unsplash.com/photo-1593691509543-c55fb32e7355?q=80&w=800');
+}
+.bg-aloevera {
+    background: url('https://images.unsplash.com/photo-1596547609652-9cf5d8d76921?q=80&w=800');
+}
+.bg-fiddleleaf {
+    background: url('https://images.unsplash.com/photo-1545241047-6083a3684587?q=80&w=800');
 }
