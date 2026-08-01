@@ -1,8 +1,5 @@
-/* ==========================================================================
-   PlantIfi - Global Styles & Custom Utilities
-   ========================================================================== */
 
-/* Global Body Styling & Fixed Background */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
@@ -10,7 +7,6 @@ body {
     min-height: 100vh;
 }
 
-/* Glassmorphism Containers */
 .glass-card {
     background: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: blur(8px);
@@ -35,7 +31,6 @@ body {
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
 }
 
-/* Interactive Category Pills */
 .category-pill {
     transition: all 0.25s ease-in-out;
     backdrop-filter: blur(6px);
@@ -48,9 +43,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15) !important;
 }
 
-/* ==========================================================================
-   Plant Directory Cards & Dark Overlays
-   ========================================================================== */
 .plant-card-cover {
     background-size: cover !important;
     background-position: center !important;
@@ -62,7 +54,6 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Gradient Overlay for Readable Text */
 .plant-card-cover::before {
     content: '';
     position: absolute;
@@ -81,7 +72,7 @@ body {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Specific Plant Background Images */
+
 .bg-monstera {
     background: url('https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg?auto=compress&cs=tinysrgb&w=800');
 }
@@ -110,9 +101,7 @@ body {
     background: url('https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=800');
 }
 
-/* ==========================================================================
-   Contact Page Elements & Custom Form Inputs
-   ========================================================================== */
+
 .info-box-card {
     background: rgba(25, 135, 84, 0.08);
     border: 1px solid rgba(25, 135, 84, 0.2);
