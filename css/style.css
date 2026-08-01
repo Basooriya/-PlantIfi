@@ -1,4 +1,4 @@
-/* Global Page Styling & Soft Nature Background */
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), 
@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
 }
 
-/* Translucent Glass Box Styling */
+
 .glass-card {
     background: rgba(255, 255, 255, 0.8) !important;
     backdrop-filter: blur(8px);
@@ -15,7 +15,7 @@ body {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* Directory Cover Cards with Dark Gradient Overlay */
+
 .plant-card-cover {
     background-size: cover !important;
     background-position: center !important;
@@ -27,7 +27,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Dark overlay to make text crystal clear over plant photos */
+
 .plant-card-cover::before {
     content: '';
     position: absolute;
@@ -46,7 +46,7 @@ body {
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3) !important;
 }
 
-/* Specific Cover Image URLs */
+
 .bg-monstera {
     background: url('https://images.unsplash.com/photo-1614594975525-e45190c55d0b?q=80&w=800');
 }
