@@ -1,71 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Plantifi - Interactive Plant care & Store</title>
-        <!Bootstrap 5 CSS -->
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlantIfi - Botanical Database & Safety Guide</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
 
-    </head>
-    <body>
-        <!--Navigation Bar (Required on all pages)-->
-        <nav class=""navbar navbar-expand-lg navbar-dark bg-success sticky-top">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="index.html"> 🌿 Plantifi </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="=nav-item"><a class="nav-link active" href="index.html">Home</a> </li>
-                        <li class="nav-item"> <a class="nav-link" href="directory.html"> plant Directory</a></li>
-                        <li class="=nav-item"><a class="nav-link " href="contact.html"> contact Us</a> </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        <div id ="plantCarousel"class="plantCarousel slide" data-bs-ride =" carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="P-5 text-center bg-light text-success rounded-3 m-3">
-                        <h1 class="fw-bold"> Welcome to plantifi</h1>
-                        <p class="lead"> Discover,track,and care for your favorite indoor plants.</p>
-                        <a herf="directory.html"class="btn btn-success btn-lg">Explore Directory</a>
-                    </div>
-                </div>
-                <div class="carrousel-item">
-                    <div class="p-5 text-center bg-success text-white rounded-3 m3">
-                        <h1 class="fw-bold"> Healthy Greenery at your Fingertips</h1>
-                        <p class="lead"> Get rxpert plant care advice andtios.</p>
-                        <a herf="contact.html" class="btn btn-ligth btn-lg text-success fw-blod">Get In Touch</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#plantCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+                <img src="images/logo.png" alt="PlantIfi" width="35" height="35" class="bg-white rounded-circle p-1" onerror="this.style.display='none'">
+                <span class="fw-bold"> 🌿 PlantIfi</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#plantCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-dark rounded-circle"></span>
-            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="directory.html">Plant Directory</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="login.html">Login</a></li>
+                </ul>
+            </div>
         </div>
-        <!--Main Content Container-->
-        <div class="container my-5">
-            <h2 class="text-center text-success md-4"> Featured Categories</h2>
-            <div class="row g-4 text-center">
-                <div class="col-md-4">
-                    <div class="row g-4text-center">
-                        <div calss="col-md-4">
-                            <div class="card h-100 shadow-sm border-0">
-                                <div class="card-body">
-                                    <h5 class="cars-title text-success">Indoor Plants</h5>
-                                    <p class="card-text">Perfect Low-maintenance for your living space and office deska.</p>
-                                </div>
+    </nav>
+
+    <header class="bg-light py-5 text-center border-bottom">
+        <div class="container my-2">
+            <h1 class="fw-bold text-success display-5 mb-3">Welcome to PlantIfi</h1>
+            <p class="lead text-muted mx-auto" style="max-width: 650px;">
+                The ultimate Digital Herbarium & Plant Safety Guide. Search scientific names, toxicity profiles, edibility, and economic uses.
+            </p>
+            <a href="directory.html" class="btn btn-success btn-lg mt-2 fw-semibold px-4">Explore Directory</a>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <h3 class="text-center text-success fw-bold mb-4">Featured Plant Highlights</h3>
+
+        <div id="featuredSlider" class="carousel slide border rounded bg-white shadow-sm p-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                
+                <div class="carousel-item active">
+                    <div class="row align-items-center text-center text-md-start">
+                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                            <div class="bg-light p-4 rounded border">
+                                <span style="font-size: 4rem;">🌺</span>
                             </div>
+                        </div>
+                        <div class="col-md-8">
+                            <span class="badge bg-danger mb-2">High Toxicity Warning</span>
+                            <h3 class="fw-bold text-success">Oleander</h3>
+                            <p class="text-muted fst-italic mb-2">Scientific Name: <strong>Nerium oleander</strong></p>
+                            <p>An ornamental shrub found in gardens. All parts of this plant contain cardiac glycosides and are severely toxic to humans and pets.</p>
+                            <a href="directory.html" class="btn btn-outline-success btn-sm">View Profile</a>
                         </div>
                     </div>
                 </div>
+
+                <div class="carousel-item">
+                    <div class="row align-items-center text-center text-md-start">
+                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                            <div class="bg-light p-4 rounded border">
+                                <span style="font-size: 4rem;">🪵</span>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <span class="badge bg-primary mb-2">Economic Value</span>
+                            <h3 class="fw-bold text-success">Teak Tree</h3>
+                            <p class="text-muted fst-italic mb-2">Scientific Name: <strong>Tectona grandis</strong></p>
+                            <p>A large tropical hardwood species harvested for commercial timber, outdoor furniture, and durable construction.</p>
+                            <a href="directory.html" class="btn btn-outline-success btn-sm">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#featuredSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-secondary rounded-circle p-2"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#featuredSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-secondary rounded-circle p-2"></span>
+            </button>
         </div>
-    </body>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <small>&copy; 2026 PlantIfi - Department of ICT, Rajarata University of Sri Lanka</small>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
 </html>
