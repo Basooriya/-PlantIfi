@@ -1,8 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-    // -------------------------------------------------------------
-    // Feature 1: Live Filter & Search Logic (Directory Page)
-    // -------------------------------------------------------------
     const searchInput = document.getElementById("plantSearch");
     const checkboxes = document.querySelectorAll(".filter-checkbox");
     const plantCards = document.querySelectorAll(".plant-item");
@@ -10,19 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function filterPlants() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
         
-        // Get all checked category values
         const activeCategories = Array.from(checkboxes)
             .filter(cb => cb.checked)
             .map(cb => cb.value);
 
         plantCards.forEach(card => {
-            const cardName = card.getAttribute("data-name").toLowerCase();
-            const cardCategories = card.getAttribute("data-category").toLowerCase().split(" ");
+            const cardName = card.getAttribute("data-name") ? card.getAttribute("data-name").toLowerCase() : "";
+            const cardCategories = card.getAttribute("data-category") ? card.getAttribute("data-category").toLowerCase().split(" ") : [];
 
-            // Match text search
             const matchesSearch = cardName.includes(query);
 
-            // Match active checkboxes (if none checked, show all categories)
             const matchesCategory = activeCategories.length === 0 || 
                 activeCategories.some(cat => cardCategories.includes(cat));
 
@@ -39,10 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     checkboxes.forEach(cb => cb.addEventListener("change", filterPlants));
 
-
-    // -------------------------------------------------------------
-    // Feature 2: Real-time Form Validation (Contact/Report Page)
-    // -------------------------------------------------------------
     const reportForm = document.getElementById("reportForm");
     if (reportForm) {
         reportForm.addEventListener("submit", (e) => {
@@ -54,10 +43,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const details = document.getElementById("plantDetails").value.trim();
             const alertBox = document.getElementById("formAlert");
 
-            // Email Regex check
-            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            // Updated regex to support longer domains like .ac.lk, .online, etc.
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
 
-            if (name === "" || email === "" || inquiry === null || details === "") {
+            // Corrected check for dropdown select element
+            if (name === "" || email === "" || inquiry === "" || details === "") {
                 alertBox.className = "alert alert-danger";
                 alertBox.textContent = "Please fill in all fields before submitting.";
                 alertBox.classList.remove("d-none");
@@ -71,7 +61,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // Success feedback
             alertBox.className = "alert alert-success";
             alertBox.textContent = "Your plant toxicity report has been logged successfully!";
             alertBox.classList.remove("d-none");
