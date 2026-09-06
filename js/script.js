@@ -35,19 +35,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const reportForm = document.getElementById("reportForm");
     if (reportForm) {
         reportForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-
             const name = document.getElementById("userName").value.trim();
             const email = document.getElementById("userEmail").value.trim();
             const inquiry = document.getElementById("inquiryType").value;
             const details = document.getElementById("plantDetails").value.trim();
             const alertBox = document.getElementById("formAlert");
 
-            // Updated regex to support longer domains like .ac.lk, .online, etc.
             const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
 
-            // Corrected check for dropdown select element
             if (name === "" || email === "" || inquiry === "" || details === "") {
+                e.preventDefault();
                 alertBox.className = "alert alert-danger";
                 alertBox.textContent = "Please fill in all fields before submitting.";
                 alertBox.classList.remove("d-none");
@@ -55,17 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             if (!email.match(emailPattern)) {
+                e.preventDefault();
                 alertBox.className = "alert alert-warning";
                 alertBox.textContent = "Please enter a valid email address containing '@' and a domain name.";
                 alertBox.classList.remove("d-none");
                 return;
             }
 
-            alertBox.className = "alert alert-success";
-            alertBox.textContent = "Your plant toxicity report has been logged successfully!";
-            alertBox.classList.remove("d-none");
-
-            reportForm.reset();
+            // Let the form submit natively to PHP
         });
     }
 });

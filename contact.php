@@ -1,3 +1,20 @@
+<?php
+session_start();
+require_once 'includes/db.php';
+
+$success = false;
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $name = trim($_POST['userName'] ?? '');
+    $email = trim($_POST['userEmail'] ?? '');
+    $message = trim($_POST['plantDetails'] ?? '');
+
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        $stmt = $pdo->prepare("INSERT INTO messages (name, email, message) VALUES (?, ?, ?)");
+        $stmt->execute([$name, $email, $message]);
+        $success = true;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +28,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
                 <span class="fw-bold fs-4">🌿 PlantIfi</span>
             </a>
             
@@ -21,10 +38,15 @@
 
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="directory.html">Plant Directory</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="directory.php">Plant Directory</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.php">Contact Us</a></li>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="dashboard.php">Dashboard</a></li>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="auth/logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="auth/login.php">Login</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -79,22 +101,25 @@
 
                         <div class="col-md-7">
                            
+                            <?php if ($success): ?>
+                                <div class="alert alert-success">Your plant toxicity report has been logged successfully!</div>
+                            <?php endif; ?>
                             <div id="formAlert" class="alert d-none mb-3" role="alert"></div>
 
-                            <form id="reportForm" class="p-2">
+                            <form id="reportForm" class="p-2" method="POST" action="contact.php">
                                 <div class="mb-3">
                                     <label for="userName" class="form-label fw-semibold text-dark">Full Name</label>
-                                    <input type="text" class="form-control rounded-3 custom-input" id="userName" placeholder="e.g. John Doe">
+                                    <input type="text" name="userName" class="form-control rounded-3 custom-input" id="userName" placeholder="e.g. John Doe">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="userEmail" class="form-label fw-semibold text-dark">Email Address</label>
-                                    <input type="email" class="form-control rounded-3 custom-input" id="userEmail" placeholder="name@example.com">
+                                    <input type="email" name="userEmail" class="form-control rounded-3 custom-input" id="userEmail" placeholder="name@example.com">
                                 </div>
 
                                 <div class="mb-3">
                                     <label for="inquiryType" class="form-label fw-semibold text-dark">Inquiry Type</label>
-                                    <select class="form-select rounded-3 custom-input" id="inquiryType">
+                                    <select name="inquiryType" class="form-select rounded-3 custom-input" id="inquiryType">
                                         <option value="" selected disabled>Select an inquiry type...</option>
                                         <option value="general">General Support</option>
                                         <option value="toxicity">Toxicity / Safety Report</option>
@@ -104,7 +129,7 @@
 
                                 <div class="mb-4">
                                     <label for="plantDetails" class="form-label fw-semibold text-dark">Your Message</label>
-                                    <textarea class="form-control rounded-3 custom-input" id="plantDetails" rows="4" placeholder="How can we help you regarding plant safety or identification?"></textarea>
+                                    <textarea name="plantDetails" class="form-control rounded-3 custom-input" id="plantDetails" rows="4" placeholder="How can we help you regarding plant safety or identification?"></textarea>
                                 </div>
 
                                 <button type="submit" class="btn btn-success btn-lg w-100 fw-semibold shadow-sm rounded-3 py-2">

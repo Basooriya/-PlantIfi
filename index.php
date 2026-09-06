@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top">
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
                 <span class="fw-bold fs-4">🌿 PlantIfi</span>
             </a>
             
@@ -21,10 +22,15 @@
 
             <div class="collapse navbar-collapse" id="navMenu">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="directory.html">Plant Directory</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="index.php">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="directory.php">Plant Directory</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="dashboard.php">Dashboard</a></li>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="auth/logout.php">Logout</a></li>
+                    <?php else: ?>
+                        <li class="nav-item ms-lg-2"><a class="btn btn-outline-light btn-sm px-3" href="auth/login.php">Login</a></li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </div>
@@ -38,7 +44,7 @@
                 <p class="lead text-dark fw-medium mx-auto" style="max-width: 650px;">
                     The ultimate Digital Herbarium & Plant Safety Guide. Search scientific names, toxicity profiles, edibility, and economic uses.
                 </p>
-                <a href="directory.html" class="btn btn-success btn-lg mt-2 fw-semibold px-4 shadow-sm">Explore Directory</a>
+                <a href="directory.php" class="btn btn-success btn-lg mt-2 fw-semibold px-4 shadow-sm">Explore Directory</a>
             </div>
         </header>
 
@@ -62,7 +68,7 @@
                                     <h3 class="fw-bold text-success">Oleander</h3>
                                     <p class="text-muted fst-italic mb-2">Scientific Name: <strong>Nerium oleander</strong></p>
                                     <p class="text-secondary">An ornamental shrub found in gardens. All parts of this plant contain cardiac glycosides and are severely toxic to humans and pets.</p>
-                                    <a href="directory.html" class="btn btn-outline-success btn-sm fw-semibold">View Profile</a>
+                                    <a href="directory.php" class="btn btn-outline-success btn-sm fw-semibold">View Profile</a>
                                 </div>
                             </div>
                         </div>
@@ -80,7 +86,7 @@
                                     <h3 class="fw-bold text-success">Teak Tree</h3>
                                     <p class="text-muted fst-italic mb-2">Scientific Name: <strong>Tectona grandis</strong></p>
                                     <p class="text-secondary">A large tropical hardwood species harvested for commercial timber, outdoor furniture, and durable construction.</p>
-                                    <a href="directory.html" class="btn btn-outline-success btn-sm fw-semibold">View Profile</a>
+                                    <a href="directory.php" class="btn btn-outline-success btn-sm fw-semibold">View Profile</a>
                                 </div>
                             </div>
                         </div>
