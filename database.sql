@@ -34,9 +34,12 @@ CREATE TABLE IF NOT EXISTS `plants` (
 
 -- Insert sample plant data
 INSERT IGNORE INTO `plants` (`common_name`, `scientific_name`, `category`, `description`, `toxicity_level`, `image_url`) VALUES
-('Oleander', 'Nerium oleander', 'Toxic', 'An ornamental shrub. All parts of this plant contain cardiac glycosides and are severely toxic to humans and pets.', 'High Toxicity', 'https://images.unsplash.com/photo-1598880940080-ff9a29891b85?q=80&w=800'),
-('Teak Tree', 'Tectona grandis', 'Commercial', 'A large tropical hardwood species harvested for commercial timber and durable construction.', 'None', 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=800'),
-('Aloe Vera', 'Aloe barbadensis', 'Medicinal', 'A succulent plant species often used in herbal medicine for soothing burns and skin conditions.', 'Mild (Pets)', 'https://images.unsplash.com/photo-1596547609652-9fc5d8d428ae?q=80&w=800'),
-('Tomato', 'Solanum lycopersicum', 'Edible', 'A widely cultivated edible fruit. Note that the leaves and stems are slightly toxic.', 'None (Fruit)', 'https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=800'),
-('Snake Plant', 'Dracaena trifasciata', 'Ornamental', 'A popular indoor plant known for improving indoor air quality. Very low maintenance.', 'Mildly Toxic', 'https://images.unsplash.com/photo-1599427303058-f04cbf592288?q=80&w=800'),
-('Deadly Nightshade', 'Atropa belladonna', 'Toxic', 'A highly poisonous plant. The foliage and berries are extremely toxic, containing tropane alkaloids.', 'Extreme', 'https://images.unsplash.com/photo-1620063231433-2a445d43fbcd?q=80&w=800');
+('Monstera Deliciosa', 'Monstera deliciosa', 'Ornamental', 'Famous for its split leaves. Thrives in bright, indirect sunlight.', 'Mild (Pets)', 'https://images.pexels.com/photos/3097770/pexels-photo-3097770.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Snake Plant', 'Dracaena trifasciata', 'Ornamental', 'Hardy indoor plant that naturally purifies house air toxins.', 'Mildly Toxic', 'https://images.pexels.com/photos/2123482/pexels-photo-2123482.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Peace Lily', 'Spathiphyllum', 'Ornamental', 'Features elegant white flowers and prefers shaded indoor spots.', 'Toxic to Pets', 'https://images.pexels.com/photos/4505171/pexels-photo-4505171.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Aloe Vera', 'Aloe barbadensis', 'Medicinal', 'Popular medicinal succulent with soothing gel in fleshy leaves.', 'Mild (Pets)', 'https://images.pexels.com/photos/1687341/pexels-photo-1687341.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Fiddle Leaf Fig', 'Ficus lyrata', 'Ornamental', 'Stunning indoor tree with large, broad green leaves.', 'Mildly Toxic', 'https://images.pexels.com/photos/7084310/pexels-photo-7084310.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Lavender', 'Lavandula', 'Medicinal', 'Aromatic herb known for its calming scent and stress-relieving properties.', 'None', 'https://images.pexels.com/photos/207518/pexels-photo-207518.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Sweet Basil', 'Ocimum basilicum', 'Edible', 'A flavorful culinary herb widely used in cooking and pesto.', 'None', 'https://images.pexels.com/photos/1087902/pexels-photo-1087902.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Oleander', 'Nerium oleander', 'Toxic', 'Highly toxic. Ingesting any part of this ornamental shrub can be fatal.', 'High Toxicity', 'https://images.pexels.com/photos/6208087/pexels-photo-6208087.jpeg?auto=compress&cs=tinysrgb&w=800'),
+('Moth Orchid', 'Phalaenopsis', 'Ornamental', 'A beautiful, long-blooming flower highly prized for indoor decoration.', 'None', 'https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=800');
