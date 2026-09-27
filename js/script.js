@@ -1,23 +1,29 @@
 document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("plantSearch");
-    const checkboxes = document.querySelectorAll(".filter-checkbox");
+    const categoryButtons = document.querySelectorAll(".category-pill");
     const plantCards = document.querySelectorAll(".plant-item");
 
     function filterPlants() {
         const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
         
-        const activeCategories = Array.from(checkboxes)
-            .filter(cb => cb.checked)
-            .map(cb => cb.value);
+        let activeCategory = "all";
+        categoryButtons.forEach(btn => {
+            if (btn.classList.contains("active")) {
+                if (btn.textContent.toLowerCase().includes("toxic")) activeCategory = "toxic";
+                else if (btn.textContent.toLowerCase().includes("edible")) activeCategory = "edible";
+                else if (btn.textContent.toLowerCase().includes("herbal")) activeCategory = "herbal";
+                else if (btn.textContent.toLowerCase().includes("ornamental")) activeCategory = "ornamental";
+                else if (btn.textContent.toLowerCase().includes("succulent")) activeCategory = "succulent";
+                else activeCategory = "all";
+            }
+        });
 
         plantCards.forEach(card => {
             const cardName = card.getAttribute("data-name") ? card.getAttribute("data-name").toLowerCase() : "";
-            const cardCategories = card.getAttribute("data-category") ? card.getAttribute("data-category").toLowerCase().split(" ") : [];
+            const cardCategories = card.getAttribute("data-category") ? card.getAttribute("data-category").toLowerCase() : "";
 
             const matchesSearch = cardName.includes(query);
-
-            const matchesCategory = activeCategories.length === 0 || 
-                activeCategories.some(cat => cardCategories.includes(cat));
+            const matchesCategory = activeCategory === "all" || cardCategories.includes(activeCategory);
 
             if (matchesSearch && matchesCategory) {
                 card.style.display = "block";
@@ -30,7 +36,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (searchInput) {
         searchInput.addEventListener("keyup", filterPlants);
     }
-    checkboxes.forEach(cb => cb.addEventListener("change", filterPlants));
+    
+    categoryButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            categoryButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            filterPlants();
+        });
+    });
 
     const reportForm = document.getElementById("reportForm");
     if (reportForm) {
